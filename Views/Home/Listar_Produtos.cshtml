@@ -1,0 +1,37 @@
+@using Microsoft.AspNetCore.Http;
+@model IEnumerable<Produtos>
+@{
+    ViewData["Title"] = "Listagem de Produtos";
+}
+<main class="fundo-color">
+<div class="usuarios-content">  
+<div>
+    <div class="icone-titulo"><img class="icones-content" src="~/img/icone-listagempacotes.png"><h3 class="titulos">LISTAGEM DE Produtos</h3></div>
+<p class="paragrafos">A lista com todos os produtos cadastrados no sistema será exibida abaixo. Utilize os botões da direita para realizar a exclusão ou alteração dos pacotes</p>
+<p class="paragrafos">AVISO: Tenha cuidado ao excluir um produto. Uma vez excluídos, os dados do registo relacionados ao produto não poderão ser recuperados.</p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scioe="col">ID</th>
+      <th scope="col">NOME</th>
+      <th scope="col">DESCRIÇÃO</th>
+      <th scope="col">PREÇO</th>
+     
+
+    </tr>
+  </thead>
+  <tbody>
+     @foreach(Produtos p in Model){
+    <tr>
+      <th scope="row">@p.id</th>
+      <td>@p.nome</td>
+      <td>@p.descricao</td>
+      <td>@p.preco</td>
+      <td><a href="/Home/Alterar_Produto?id=@p.id"><img class="icones-content" src="~/img/icone-edit.png"></td>
+      <td><a href="/Home/Excluir_Produto?id=@p.id"><img class="icones-content" src="~/img/icone-close2.png"></a></td>
+    </tr>} 
+  </tbody>
+</table>
+
+</div>
+</main>

@@ -1,0 +1,64 @@
+﻿@using Microsoft.AspNetCore.Http;
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Site de venda de produtos de Informática">
+    <meta name="author" content="Leonardo Kuhnert">
+    <title>@ViewData["Title"] - Eazy Ware</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/estilo.css" />
+    <link rel="icon" type="image/png" href="~/img/icone.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <a asp-action="Index"><img src="~/img/logo-branco.png" alt="Logo" title="EazyWare" class="logo"></a>
+    <div class="right-items">
+    <div>
+    @if(Context.Session.GetInt32("id_usuarios") != null)
+                {
+                ViewBag.Login = "Olá " + @Context.Session.GetString("nome");
+
+                <span style="font-family:'Poppins', sans-serif; color: white; position:absolute; right:215px;  top: 25px; font-size: 15px;">@ViewBag.Login</span>
+                <a asp-action="Logout"><img class="icones-img" title="Logout" src="~/img/icone-logout.png" style="position:absolute; right:180px;  top: 25px;"></a>
+                }  
+    </div>   
+    <div class="menu-hamburger">   
+    <button id="button-hamburger"><img alt="Menu Hamburger" title="Menu" src="~/img/icone-hamburger.png" class="icones-img"></button>
+    <ul>
+        <li><a asp-action="Index">Home</a></li>
+        <li><a asp-action="Produtos">Produtos</a></li>
+        <li><a asp-action="Registro_Produtos">Registrar Produto</a></li>
+        <li><a asp-action="Listar_Usuarios">Lista de Usuários</a></li>
+        <li><a asp-action="Listar_Produtos">Lista de Produtos </a></li>
+        <li><a asp-action="Atendimento">Atendimento</a></li>
+        <li><a asp-action="Cadastro">Cadastro</a></li>
+        <li><a asp-action="Login">Login</a></li>
+    </ul>
+    </div> 
+    </div>      
+        </nav>
+    </header>
+    <div>
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <p>EazyWare -  © Copyright 2020</p>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

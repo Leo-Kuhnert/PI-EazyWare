@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "4anbqTVPyx8TrEoIz/Dh+UEYFBPHyuLBD4F9okxhRQPj/apGqH9PhOGJlE4NRP3YQ34oqP4hFhT9EWawJd7+Aw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\leoku\\Desktop\\PI-EazyWare\\PI-EAZYWARE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\leoku\\.nuget\\packages\\mysqlconnector\\1.2.0\\mysqlconnector.1.2.0.nupkg.sha512",
+    "C:\\Users\\leoku\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\leoku\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.22\\microsoft.netcore.app.host.win-x64.3.1.22.nupkg.sha512"
+  ],
+  "logs": []
+}
